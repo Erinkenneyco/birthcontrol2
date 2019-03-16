@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 class Signup extends Component {
     state = {
-        validUsername: false,
-        validPassword: false,
-        confirmPassword: false
+        validUsername: true,
+        validPassword: true,
+        confirmPassword: true
     }
     
     componentDidUpdate() {
@@ -79,11 +79,11 @@ class Signup extends Component {
                         <FormText>at least 8 characters, 1 capital & 1 number</FormText>
                     </FormGroup>
                     {/* if all fields are valid, allow the user to submit the form */}
-                    {(this.state.validUsername && this.state.validPassword && this.state.confirmPassword) ? (
+                    {/* {(this.state.validUsername && this.state.validPassword && this.state.confirmPassword) ? ( */}
                         <Button onClick={this.props.handleSignup} color="success" block>Signup</Button>
-                    ) : (
-                        <Button onClick={this.props.handleSignup} color="danger" block disabled>Signup</Button>
-                    )}
+                    {/* ) : ( */}
+                        {/* <Button onClick={this.props.handleSignup} color="danger" block disabled>Signup</Button> */}
+                    {/* )} */}
                     <p className="signupLink">
                         <Link to="/login">already have an account?  Sign in here</Link>
                     </p>

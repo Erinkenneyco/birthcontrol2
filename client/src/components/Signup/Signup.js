@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 class Signup extends Component {
     state = {
-        validUsername: true,
-        validPassword: true,
-        confirmPassword: true
+        validUsername: false,
+        validPassword: false,
+        confirmPassword: false
     }
     
     componentDidUpdate() {

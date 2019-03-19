@@ -62,10 +62,10 @@ class Profile extends Component {
                     <p>Have you taken your pill today?</p>
                     </Row>
                      <Row className="profilePhoto" class="col-md-6" data-aos="fade-up">
-                     <Col><img src= "https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow"width= "200" alt="image" class= "img-rounded" ></img></Col>
+                     <Col><img src= "https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow"width= "200" alt="" class= "img-rounded" ></img></Col>
 
                      <Col>
-                       <img src= "https://ugcorigin.s-microsoft.com/100/fb63105c-8aff-4ff7-ae87-a5f79f83ee4a/200/v3/image.jpg" id= "calendar" width= "200" alt="image" class="img-borded"></img>
+                       <img src= "https://ugcorigin.s-microsoft.com/100/fb63105c-8aff-4ff7-ae87-a5f79f83ee4a/200/v3/image.jpg" id= "calendar" width= "200" alt="" class="img-borded"></img>
                         </Col>
 
                     <Col className="undecided" id="undecidedNow">

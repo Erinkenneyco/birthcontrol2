@@ -14,10 +14,22 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    this.getJoke();
+    // this.getJoke();
     this.loggedIn();
   }
 
+<<<<<<< HEAD
+  // getJoke = () => {
+  //   API.ChuckNorris().then(joke => {
+  //     let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
+  //     this.setState({
+  //       joke: newJoke
+  //     })
+  //   }).catch(err => {
+  //     console.log(err)
+  //   });
+  // }
+=======
   getJoke = () => {
     // API.ChuckNorris().then(joke => {
     //   let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
@@ -28,6 +40,7 @@ class Home extends Component {
     //   console.log(err)
     // });
   }
+>>>>>>> origin
 
   loggedIn = () => {
     API.isLoggedIn().then(user => {
@@ -44,7 +57,7 @@ class Home extends Component {
   render() {
     return (
       <div className="homeBox">
-        <Joke joke={this.state.joke}/>
+        <Joke/>
         {this.state.loggedIn ? (
           <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Joke</Button>
         ) : (<></>)}

@@ -90,6 +90,8 @@ class Profile extends Component {
                      <Col><img src= "https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow"width= "200" alt="image"  ></img></Col>
 
                      </Row>
+
+                     <CalendarScreen/>
                      
 
 

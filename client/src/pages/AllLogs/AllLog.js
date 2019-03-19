@@ -1,8 +1,10 @@
 // listens for click to run algoritm 
 
 import React, { Component } from "react";
+import "./AllLog.scss";
 import API from "../../utils/API";
 import Card from "../../components/Card";
+import { Container} from "reactstrap";
 
 
 class AllLogs extends Component {
@@ -11,11 +13,12 @@ class AllLogs extends Component {
         logs: []
     }
 
+
     getLogs(id) {
         console.log("in.getLogs")
         API.getLogs(id).then(logs => {
-            this.setState({logs:logs.data})
-            
+            this.setState({ logs: logs.data })
+
         }).catch(err => {
             console.log(err);
         });
@@ -30,7 +33,7 @@ class AllLogs extends Component {
                     user: user.data.user
                 });
             }
-        }).then(()=>{
+        }).then(() => {
             console.log("second.then")
             this.getLogs(this.state.user._id)
         }).catch(err => {
@@ -44,17 +47,18 @@ class AllLogs extends Component {
     render() {
         console.log(this.state.logs)
         return (
-            
-            <div style={{ marginTop: 10 }}>
-                
-                {this.state.logs.length ? (
-              <div>
-                {this.state.logs.map(log => <Card key={log._id} keys={log._id} bc={log.bc} hungover={log.hungover} sleep={log.sleep} spotting={log.spotting} symptoms= {log.symptoms} temp={log.temp} weight= {log.weight} date ={log.date} /> )}
-              </div>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-            </div>
+            <Container className="allLogPage">
+                <div style={{ marginTop: 10 }}>
+
+                    {this.state.logs.length ? (
+                        <div>
+                            {this.state.logs.map(log => <Card key={log._id} keys={log._id} bc={log.bc} hungover={log.hungover} sleep={log.sleep} spotting={log.spotting} symptoms={log.symptoms} temp={log.temp} weight={log.weight} date={log.date} />)}
+                        </div>
+                    ) : (
+                            <h3>No Results to Display</h3>
+                        )}
+                </div>
+            </Container>
         )
     }
 }

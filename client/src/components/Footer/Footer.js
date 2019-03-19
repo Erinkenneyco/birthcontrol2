@@ -6,8 +6,9 @@ function Footer() {
     return (
         <footer className="footer">
             <p><i className="fab fa-react react-icon"></i></p>
-            <p>Erin Kenney, Seneca Cherry, Selina Maes, Paige Herbst</p>
-            <p><a id="github" href="" target="blank"><i className="fab fa-github gh-icon"></i></a></p>
+            
+            <p> Developed By: E.Kenney, S.Cherry, S.Maes, P.Herbst</p>
+            <p><a id="github" href="https://github.com/Erinkenneyco/birthcontrol2" target="blank"><i className="fab fa-github gh-icon"></i></a></p>
         </footer>
     )
 }

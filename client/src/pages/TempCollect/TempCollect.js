@@ -75,7 +75,7 @@ class TempCollect extends Component {
                                 onChange={this.handleInputChange}
                                 value={this.state.temp}
                             ></input>
-                            <div class="input-group-addon"> .00 </div>
+                            
                         </div>
                     </div>
                     <br />
@@ -96,7 +96,6 @@ class TempCollect extends Component {
                             ></input>
 
 
-                            <div class="input-group-addon"> .00 </div>
                         </div>
                     </div>
 

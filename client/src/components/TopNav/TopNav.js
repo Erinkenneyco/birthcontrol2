@@ -56,7 +56,7 @@ export default class Navigation extends Component {
         return (
             <div>
                 <Navbar className="navbar" light expand="md">
-                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-key"></i> React Auth</NavbarBrand>
+                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-briefcase-medical"></i> FlowSential</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -72,6 +72,12 @@ export default class Navigation extends Component {
                                         <>
                                             <DropdownItem>
                                                 <NavLink href="/profile">Profile</NavLink>
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                <NavLink href="/log">Daily Log</NavLink>
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                <NavLink href="/allLogs"> All Daily Logs</NavLink>
                                             </DropdownItem>
                                             <DropdownItem>
                                                 <NavLink onClick={this.logout}>Logout</NavLink>

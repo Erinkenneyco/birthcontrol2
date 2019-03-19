@@ -8,7 +8,7 @@ import API from "../../utils/API";
 // import Flow from "./flowphoto.jpg";
 import { Container, Row, Col } from "reactstrap";
 import CalendarScreen from "./CalendarScreen.js";
-import Calendar from 'tui-calendar'; /* ES6 */
+// import Calendar from 'tui-calendar'; /* ES6 */
 import "tui-calendar/dist/tui-calendar.css";
 
 
@@ -87,7 +87,7 @@ class Profile extends Component {
                         <Row className="profilePhoto" class="col-md-6" data-aos="fade-up">
 
 
-                            <Col><img src="https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow" width="200" alt="image"  ></img></Col>
+                            <Col><img src="https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow" width="200" alt=""  ></img></Col>
 
                         </Row>
 

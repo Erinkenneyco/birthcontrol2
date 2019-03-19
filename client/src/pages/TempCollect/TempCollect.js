@@ -2,6 +2,8 @@
 
 import React, { Component } from "react";
 import API from "../../utils/API";
+import "./TempCollect.scss";
+import { Container}  from "reactstrap";
 
 class TempCollect extends Component {
     state = {
@@ -12,21 +14,22 @@ class TempCollect extends Component {
         hungover: null,
         bc: null,
         symptoms: "",
-        loggedIn:"false",
-        user:null
+        loggedIn: "false",
+        user: null
     }
 
     componentDidMount() {
         API.isLoggedIn().then(user => {
-        if (user.data.loggedIn) {
-            this.setState({
-                loggedIn: true,
-                user: user.data.user
-            });
-        }
-    }).catch(err => {
-        console.log(err);
-    });}
+            if (user.data.loggedIn) {
+                this.setState({
+                    loggedIn: true,
+                    user: user.data.user
+                });
+            }
+        }).catch(err => {
+            console.log(err);
+        });
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -35,9 +38,9 @@ class TempCollect extends Component {
 
     handleButtonClick = event => {
         event.preventDefault();
-       
-        if(this.state.loggedIn){
-            const log ={
+
+        if (this.state.loggedIn) {
+            const log = {
                 temp: Number(this.state.temp),
                 weight: Number(this.state.weight),
                 sleep: Number(this.state.sleep),
@@ -45,10 +48,10 @@ class TempCollect extends Component {
                 hungover: this.state.hungover,
                 bc: this.state.bc,
                 symptoms: this.state.symptoms,
-                _userId:this.state.user._id
+                _userId: this.state.user._id
             }
-    
-    
+
+
             API.addLog(log)
         }
     }
@@ -56,156 +59,157 @@ class TempCollect extends Component {
     render() {
         return (
 
+            <Container className="tempCollectPage">
+                <div style={{ marginTop: 10, }}>
 
-             <div style={{ marginTop: 10,  }}>
+                    <h3>Log your temperature and any symptoms or notes you have!!</h3>
+                    <br />
+                    <br />
 
-                <h3>Log your temperature and any symptoms or notes you have!!</h3>
-                <br />
-                <br />
+                    <form>
+                        <div className="form-group">
+                            <label className="sr-only" htmlFor="exampleInputAmount">Temperature (in degrees)</label>
+                            <div className="input-group">
+                                <div className="input-group-addon">
+                                    <i className="fas fa-temperature-low"></i></div>
+                                <input
+                                    type="text"
+                                    name="temp"
+                                    className="form-control"
+                                    id="exampleInputAmount"
+                                    placeholder="Temperature"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.temp}
+                                ></input>
 
-                <form>
-                    <div className="form-group">
-                        <label className="sr-only" htmlFor="exampleInputAmount">Temperature (in degrees)</label>
-                        <div className="input-group">
-                            <div className="input-group-addon">
-                                <i className="fas fa-temperature-low"></i></div>
-                            <input
-                                type="text"
-                                name="temp"
-                                className="form-control"
-                                id="exampleInputAmount"
-                                placeholder="Temperature"
-                                onChange={this.handleInputChange}
-                                value={this.state.temp}
-                            ></input>
-
+                            </div>
                         </div>
-                    </div>
-                    <br />
-                    <br />
+                        <br />
+                        <br />
 
-                    <div className="form-group">
-                        <label className="sr-only" htmlFor="exampleInputAmount">Weight (in pounds)</label>
-                        <div className="input-group">
-                            <div className="input-group-addon"><i className="fas fa-weight"></i></div>
-                            <input
-                                type="text"
-                                name="weight"
-                                className="form-control"
-                                id="exampleInputAmount"
-                                placeholder="Weight"
-                                onChange={this.handleInputChange}
-                                value={this.state.weight}
-                            ></input>
+                        <div className="form-group">
+                            <label className="sr-only" htmlFor="exampleInputAmount">Weight (in pounds)</label>
+                            <div className="input-group">
+                                <div className="input-group-addon"><i className="fas fa-weight"></i></div>
+                                <input
+                                    type="text"
+                                    name="weight"
+                                    className="form-control"
+                                    id="exampleInputAmount"
+                                    placeholder="Weight"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.weight}
+                                ></input>
 
 
+                            </div>
                         </div>
-                    </div>
 
-                    <br />
-                    <br />
+                        <br />
+                        <br />
 
-                    <div className="form-group">
-                        <i className="fas fa-bed"></i> <label htmlFor="hoursSlept"> How many hours did you sleep last night?</label>
-                        <select className="form-control" name="sleep" onChange={this.handleInputChange}
-                            value={this.state.sleep} >
-                            <option placeholder="0">0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                        </select>
-                    </div>
-                    <br />
+                        <div className="form-group">
+                            <i className="fas fa-bed"></i> <label htmlFor="hoursSlept"> How many hours did you sleep last night?</label>
+                            <select className="form-control" name="sleep" onChange={this.handleInputChange}
+                                value={this.state.sleep} >
+                                <option placeholder="0">0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+                        <br />
 
-                    <div className="form-group">
-                        <i className="fas fa-tint"></i> <label htmlFor="spotting"> If any, how would you rate your spotting?</label>
-                        <select className="form-control" name="spotting" onChange={this.handleInputChange}
-                            value={this.state.spotting} >
-                            <option placeholder="5 is some serious spotting!">5 is some serious spotting!</option>
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <br />
-                    <i className="fas fa-cocktail"></i> <label htmlFor="hangover">Are you hungover?</label>
-                    <div className="radio">
-                        <label>
-                            <input
-                                type="radio"
-                                name="hungover"
-                                id="blankCheckbox"
-                                value="true"
-                                aria-label="..."
-                                onChange={this.handleInputChange}
-                                checked={this.state.hungover === "true"}
-                            ></input> Yes
+                        <div className="form-group">
+                            <i className="fas fa-tint"></i> <label htmlFor="spotting"> If any, how would you rate your spotting?</label>
+                            <select className="form-control" name="spotting" onChange={this.handleInputChange}
+                                value={this.state.spotting} >
+                                <option placeholder="5 is some serious spotting!">5 is some serious spotting!</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <br />
+                        <i className="fas fa-cocktail"></i> <label htmlFor="hangover">Are you hungover?</label>
+                        <div className="radio">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="hungover"
+                                    id="blankCheckbox"
+                                    value="true"
+                                    aria-label="..."
+                                    onChange={this.handleInputChange}
+                                    checked={this.state.hungover === "true"}
+                                ></input> Yes
                          </label>
-                    </div>
-                    <div className="radio">
-                        <label>
-                            <input
-                                type="radio"
-                                name="hungover"
-                                id="blankCheckbox"
-                                value="false"
-                                aria-label="..."
-                                onChange={this.handleInputChange}
-                                checked={this.state.hungover === "false"}
-                            ></input> No
+                        </div>
+                        <div className="radio">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="hungover"
+                                    id="blankCheckbox"
+                                    value="false"
+                                    aria-label="..."
+                                    onChange={this.handleInputChange}
+                                    checked={this.state.hungover === "false"}
+                                ></input> No
                          </label>
-                    </div>
-                    <br />
-                    <br />
-                    <i className="fas fa-capsules"></i> <label htmlFor="BC">Did You take Your Birth Control?</label>
-                    <div className="radio">
-                        <label>
-                            <input
-                                type="radio"
-                                name="bc"
-                                id="blankCheckbox"
-                                value="true"
-                                aria-label="..."
-                                onChange={this.handleInputChange}
-                                checked={this.state.bc === "true"}
-                            ></input> Yes
+                        </div>
+                        <br />
+                        <br />
+                        <i className="fas fa-capsules"></i> <label htmlFor="BC">Did You take Your Birth Control?</label>
+                        <div className="radio">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="bc"
+                                    id="blankCheckbox"
+                                    value="true"
+                                    aria-label="..."
+                                    onChange={this.handleInputChange}
+                                    checked={this.state.bc === "true"}
+                                ></input> Yes
                          </label>
-                    </div>
-                    <div className="radio">
-                        <label>
-                            <input
-                                type="radio"
-                                name="bc"
-                                id="blankCheckbox"
-                                value="false"
-                                aria-label="..."
-                                onChange={this.handleInputChange}
-                                checked={this.state.bc ==="false"}
-                            ></input> No
+                        </div>
+                        <div className="radio">
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="bc"
+                                    id="blankCheckbox"
+                                    value="false"
+                                    aria-label="..."
+                                    onChange={this.handleInputChange}
+                                    checked={this.state.bc === "false"}
+                                ></input> No
                          </label>
-                    </div>
-                    <br />
-                    <br />
-                    <textarea className="form-control" name="symptoms" rows="3" placeholder="What symptoms are you experiencing?" onChange={this.handleInputChange}
-                        value={this.state.symptoms} ></textarea>
-                    <br />
-                    <button type="submit" onClick={this.handleButtonClick} className="btn btn-primary" >Log Entry</button>
-                
-                </form>
+                        </div>
+                        <br />
+                        <br />
+                        <textarea className="form-control" name="symptoms" rows="3" placeholder="What symptoms are you experiencing?" onChange={this.handleInputChange}
+                            value={this.state.symptoms} ></textarea>
+                        <br />
+                        <button type="submit" onClick={this.handleButtonClick} className="btn btn-primary" >Log Entry</button>
 
-            </div>
+                    </form>
+
+                </div>
+            </Container>
         )
     }
 }

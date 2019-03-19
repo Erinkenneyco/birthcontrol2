@@ -1,9 +1,82 @@
 @import "../../sass/variable.scss";
 
-.form-group{
-
+.tempCollectPage {
+    margin: 0 auto;
+    margin-top: 25px;
     min-height: 400px;
     margin-bottom: 100px;
     clear: both;
+    padding-bottom: 70px; /* height of your footer */
+    position: relative;
+    .noUser {
+        width: 280px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        .loginBtn {
+            margin-top: 25px;
+        }
+    
+        .loginLink {
+            color: $light-text;
+        }
+    
+        .loginLink:hover {
+            text-decoration: none;
+        }
+
+        #loadingIcon {
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            // margin-top: 25px;
+        }
+    }
+
+    .profileBox {
+        #userTitle {
+            text-align: center
+        }
+    }
+
+
+    .profilePhoto {
+        #flow {
+            border-style: bold;
+            border-color: blue
+        }
+        #calendar {
+            border-style: solid;
+        }
+    }
+
+
+
+    .undecided {
+        #undecidedNow {
+            border-style: solid;
+        }
+    }
+
+    .taken {
+        #reminder {
+            border-style: solid;  
+        }
+
+    }
+
+    .appointment {
+        #schedule {
+            border-style: solid;  
+        }
+    }
+
+    .informational {
+        #links {
+            border-style: solid;   
+        }
+    }
+
 
 }

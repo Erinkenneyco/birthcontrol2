@@ -18,18 +18,6 @@ class Home extends Component {
     this.loggedIn();
   }
 
-<<<<<<< HEAD
-  // getJoke = () => {
-  //   API.ChuckNorris().then(joke => {
-  //     let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
-  //     this.setState({
-  //       joke: newJoke
-  //     })
-  //   }).catch(err => {
-  //     console.log(err)
-  //   });
-  // }
-=======
   getJoke = () => {
     // API.ChuckNorris().then(joke => {
     //   let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
@@ -40,7 +28,6 @@ class Home extends Component {
     //   console.log(err)
     // });
   }
->>>>>>> origin
 
   loggedIn = () => {
     API.isLoggedIn().then(user => {

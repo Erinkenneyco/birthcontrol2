@@ -55,40 +55,40 @@ class TempCollect extends Component {
 
     render() {
         return (
-            <div style={{ marginTop: 10, marginBottom: 10 }}>
+             <div style={{ marginTop: 10,  }}>
                 <h3>Log your temperature and any symptoms or notes you have!!</h3>
                 <br />
                 <br />
 
                 <form>
-                    <div class="form-group">
-                        <label class="sr-only" for="exampleInputAmount">Temperature (in degrees)</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fas fa-temperature-low"></i></div>
+                    <div className="form-group">
+                        <label className="sr-only" htmlFor="exampleInputAmount">Temperature (in degrees)</label>
+                        <div className="input-group">
+                            <div className="input-group-addon">
+                                <i className="fas fa-temperature-low"></i></div>
                             <input
                                 type="text"
                                 name="temp"
-                                class="form-control"
+                                className="form-control"
                                 id="exampleInputAmount"
                                 placeholder="Temperature"
                                 onChange={this.handleInputChange}
                                 value={this.state.temp}
                             ></input>
-                            
+
                         </div>
                     </div>
                     <br />
                     <br />
 
-                    <div class="form-group">
-                        <label class="sr-only" for="exampleInputAmount">Weight (in pounds)</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="fas fa-weight"></i></div>
+                    <div className="form-group">
+                        <label className="sr-only" htmlFor="exampleInputAmount">Weight (in pounds)</label>
+                        <div className="input-group">
+                            <div className="input-group-addon"><i className="fas fa-weight"></i></div>
                             <input
                                 type="text"
                                 name="weight"
-                                class="form-control"
+                                className="form-control"
                                 id="exampleInputAmount"
                                 placeholder="Weight"
                                 onChange={this.handleInputChange}
@@ -102,9 +102,9 @@ class TempCollect extends Component {
                     <br />
                     <br />
 
-                    <div class="form-group">
-                        <i class="fas fa-bed"></i> <label for="hoursSlept"> How many hours did you sleep last night?</label>
-                        <select class="form-control" name="sleep" onChange={this.handleInputChange}
+                    <div className="form-group">
+                        <i className="fas fa-bed"></i> <label htmlFor="hoursSlept"> How many hours did you sleep last night?</label>
+                        <select className="form-control" name="sleep" onChange={this.handleInputChange}
                             value={this.state.sleep} >
                             <option placeholder="0">0</option>
                             <option>1</option>
@@ -123,9 +123,9 @@ class TempCollect extends Component {
                     </div>
                     <br />
 
-                    <div class="form-group">
-                        <i class="fas fa-tint"></i> <label for="spotting"> If any, how would you rate your spotting?</label>
-                        <select class="form-control" name="spotting" onChange={this.handleInputChange}
+                    <div className="form-group">
+                        <i className="fas fa-tint"></i> <label htmlFor="spotting"> If any, how would you rate your spotting?</label>
+                        <select className="form-control" name="spotting" onChange={this.handleInputChange}
                             value={this.state.spotting} >
                             <option placeholder="5 is some serious spotting!">5 is some serious spotting!</option>
                             <option>0</option>
@@ -137,8 +137,8 @@ class TempCollect extends Component {
                         </select>
                     </div>
                     <br />
-                    <i class="fas fa-cocktail"></i> <label for="hangover">Are you hungover?</label>
-                    <div class="radio">
+                    <i className="fas fa-cocktail"></i> <label htmlFor="hangover">Are you hungover?</label>
+                    <div className="radio">
                         <label>
                             <input
                                 type="radio"
@@ -151,7 +151,7 @@ class TempCollect extends Component {
                             ></input> Yes
                          </label>
                     </div>
-                    <div class="radio">
+                    <div className="radio">
                         <label>
                             <input
                                 type="radio"
@@ -166,8 +166,8 @@ class TempCollect extends Component {
                     </div>
                     <br />
                     <br />
-                    <i class="fas fa-capsules"></i> <label for="BC">Did You take Your Birth Control?</label>
-                    <div class="radio">
+                    <i className="fas fa-capsules"></i> <label htmlFor="BC">Did You take Your Birth Control?</label>
+                    <div className="radio">
                         <label>
                             <input
                                 type="radio"
@@ -180,7 +180,7 @@ class TempCollect extends Component {
                             ></input> Yes
                          </label>
                     </div>
-                    <div class="radio">
+                    <div className="radio">
                         <label>
                             <input
                                 type="radio"
@@ -195,10 +195,10 @@ class TempCollect extends Component {
                     </div>
                     <br />
                     <br />
-                    <textarea class="form-control" name="symptoms" rows="3" placeholder="What symptoms are you experiencing?" onChange={this.handleInputChange}
+                    <textarea className="form-control" name="symptoms" rows="3" placeholder="What symptoms are you experiencing?" onChange={this.handleInputChange}
                         value={this.state.symptoms} ></textarea>
                     <br />
-                    <button type="submit" onClick={this.handleButtonClick} class="btn btn-primary" Button color="success">Log Entry</button>
+                    <button type="submit" onClick={this.handleButtonClick} className="btn btn-primary" >Log Entry</button>
                 
                 </form>
 

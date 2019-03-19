@@ -45,9 +45,9 @@ class Home extends Component {
     return (
       <div className="homeBox">
         <Joke/>
-        {this.state.loggedIn ? (
-          <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Joke</Button>
-        ) : (<></>)}
+        {/* {this.state.loggedIn ? (
+           <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Fact</Button>
+        ) : (<></>)} */}
       </div>
 
     );

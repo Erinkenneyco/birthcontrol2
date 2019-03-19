@@ -85,6 +85,7 @@ class Profile extends Component {
                     <p>Have you taken your pill today?</p>
                     </Row>
                      <Row className="profilePhoto" class="col-md-6" data-aos="fade-up">
+
                      <Col><img src= "https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow"width= "200" alt="image"  ></img></Col>
 
                      </Row>
@@ -101,6 +102,16 @@ class Profile extends Component {
                     {/* <Col className="undecided" id="undecidedNow">
                     {/* <h1>TBD</h1> */}
                     {/* </Col> */}
+
+                     <Col><img src= "https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow"width= "200" alt="image"  ></img></Col>
+
+                     </Row>
+
+                     <CalendarScreen/>
+                     
+
+
+                 
                      
                     
 

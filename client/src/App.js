@@ -33,6 +33,8 @@ function App() {
             </Switch>
           </Container>
           
+          <Footer/>     
+        
         </div>
       </Router>
   );

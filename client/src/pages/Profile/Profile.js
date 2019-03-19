@@ -91,6 +91,8 @@ class Profile extends Component {
                      </Row>
                      
                      <CalendarScreen/>
+
+                     <Row>
                      {/* <Row className="calendar" id="newCalendar">
                       
                      
@@ -107,7 +109,7 @@ class Profile extends Component {
 
                      </Row>
 
-                     <CalendarScreen/>
+                     
                      
 
 

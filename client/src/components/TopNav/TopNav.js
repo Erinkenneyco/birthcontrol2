@@ -91,15 +91,7 @@ export default class Navigation extends Component {
                                             <DropdownItem>
                                                 <NavLink href="/signup">signup</NavLink>
                                             </DropdownItem>
-                                            <DropdownItem>
-                                                <NavLink href="/create">New Entry</NavLink>
-                                            </DropdownItem>
-                                            <DropdownItem>
-                                                <NavLink href="/edit">Edit Entry</NavLink>
-                                            </DropdownItem>
-                                            <DropdownItem>
-                                                <NavLink href="/index">All Entries</NavLink>
-                                            </DropdownItem>
+                                            
                                         </>
                                     )}
                                 </DropdownMenu>

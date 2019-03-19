@@ -91,11 +91,11 @@ class Profile extends Component {
 
                      </Row>
 
-                     <CalendarScreen/>
+                     
                      
 
 
-                  
+                 
                      
                     
 

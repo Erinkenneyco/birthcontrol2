@@ -4,7 +4,8 @@ import "./Joke.scss";
 function Joke(props) {
     return (
         <div className="jokeBox">
-            <p>{props.joke}</p>
+        <div id = "factsDisplay"></div>
+            {/* <p>{props.joke}</p> */}
         </div>
     )
 }

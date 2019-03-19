@@ -55,7 +55,10 @@ class TempCollect extends Component {
 
     render() {
         return (
+
+
              <div style={{ marginTop: 10,  }}>
+
                 <h3>Log your temperature and any symptoms or notes you have!!</h3>
                 <br />
                 <br />

@@ -4,7 +4,6 @@ import { Button } from "reactstrap";
 import API from "../../utils/API";
 import Joke from "../../components/Joke"
 import "./Home.scss";
-
 class Home extends Component {
 
   state = {
@@ -48,8 +47,19 @@ class Home extends Component {
           <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Joke</Button>
         ) : (<></>)}
       </div>
+
     );
-  }
+        }
+
+
+          
+          
+         
+   
 }
+
+
+
+
 
 export default Home;

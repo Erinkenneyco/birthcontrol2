@@ -1,3 +1,5 @@
+
+
 import React, {Component} from "react";
 import "./Profile.scss";
 import { Button } from "reactstrap";
@@ -5,7 +7,13 @@ import { Link } from "react-router-dom"
 import API from "../../utils/API";
 // import Flow from "./flowphoto.jpg";
 import { Container, Row, Col } from "reactstrap";
+import CalendarScreen from "./CalendarScreen.js";
+import Calendar from 'tui-calendar'; /* ES6 */
+import "tui-calendar/dist/tui-calendar.css";
 
+
+
+    
 class Profile extends Component {
     state = {
         loggedIn: false,
@@ -16,6 +24,8 @@ class Profile extends Component {
 
     componentDidMount() {
 
+    
+        
         this.loading();
 
         API.isLoggedIn().then(user => {
@@ -32,8 +42,10 @@ class Profile extends Component {
         console.log(this.props)
     
         // this.newProfileImage()
-    }
+    
 
+   
+      }
     loading() {
         setTimeout(()=> {
             this.setState({
@@ -41,7 +53,17 @@ class Profile extends Component {
             })
         }, 1000)  
     }
-
+    // calendar = new Calendar('#calendar', {
+    //     defaultView: 'month',
+    //     taskView: true,
+    //     template: {
+    //       monthGridHeader: function(model) {
+    //         var date = new Date(model.date);
+    //         var template = '<span class="tui-full-calendar-weekday-grid-date">' + date.getDate() + '</span>';
+    //         return template;
+    //       }
+    //     }
+    //   });
     // profileImage = () => {
     //     Flow.newProfileImage ()
     //     .then(res => this.setState({dogImage: res.data.message}))
@@ -53,6 +75,7 @@ class Profile extends Component {
             <Container className="profilePage">
                 {this.state.loggedIn ? (
                     <>
+                    
                     <Row className="profileBox">
                         
                         <h1 id="userTitle">Hello {this.state.user.username}!</h1>
@@ -62,38 +85,45 @@ class Profile extends Component {
                     <p>Have you taken your pill today?</p>
                     </Row>
                      <Row className="profilePhoto" class="col-md-6" data-aos="fade-up">
-                     <Col><img src= "https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow"width= "200" alt="image" class= "img-rounded" ></img></Col>
+                     <Col><img src= "https://www.connectioncafe.com/wp-content/uploads/2018/08/The-Flow-State.jpg" id="flow"width= "200" alt="image"  ></img></Col>
 
-                     <Col>
-                       <img src= "https://ugcorigin.s-microsoft.com/100/fb63105c-8aff-4ff7-ae87-a5f79f83ee4a/200/v3/image.jpg" id= "calendar" width= "200" alt="image" class="img-borded"></img>
-                        </Col>
+                     </Row>
+                     
+                     <CalendarScreen/>
+                     {/* <Row className="calendar" id="newCalendar">
+                      
+                     
+                        
+                    //    
 
-                    <Col className="undecided" id="undecidedNow">
-                    <h1>TBD</h1>
-                    </Col>
+                        </Row> */}
+
+                    {/* <Col className="undecided" id="undecidedNow">
+                    {/* <h1>TBD</h1> */}
+                    {/* </Col> */}
+                     
                     
-                    </Row>
 
                     <Row>
-                   <Col className="taken" id="reminder">
-                   <h3>Last Taken Reminder</h3>
-                   </Col> 
+                   {/* <Col className="taken" id="reminder">
+                   {/* <h3>Last Taken Reminder</h3> */}
+                   
 
                    <Col className="appointment" id="schedule">
                    <h4>Want to see a Doctor?</h4>
                 
-                   <p>
+                   
                     <ul><a href= "https://www.plannedparenthood.org/health-center" target="_blank" > Schedule an Appointment</a></ul>
-                   </p>
+                   
                    </Col>
 
                    <Col className="informational" id="links">
                    <h4>Informational Links</h4>
-                   <p>
+                   
                        <ul><a href= "https://www.plannedparenthood.org/"target="_blank" >Planned Parenthood Main Page</a></ul>
                        <ul><a href= "https://www.womenshealth.gov/"target="_blank" > Office of Women's Health</a></ul>
                        <ul><a href= "https://www.globalfundforwomen.org/womens-human-rights/#.XJAXipNKh-U" target="_blank"> Global Fund for Women</a></ul>
-                   </p>
+                   
                    </Col>
                    </Row>
                 </>

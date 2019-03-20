@@ -1,7 +1,7 @@
-# react-auth
-react app with passport authentication
+# FlowSential Birth Control Logging app With Authentication
+Birth control logging react app with passport authentication
 
-[Check out the app here](https://react-auth-simple.herokuapp.com/)
+[Check out the app here](https://rocky-hollows-59592.herokuapp.com/)
 
 ## Requirements
 * mongoDB
@@ -18,18 +18,22 @@ react app with passport authentication
 * Node
 * reactstrap
 * animate css
+* sass css
+* styled-components
+* reactstrap
+* and more! 
 
 ## Setup Instructions
 1. clone the repo 
-    * `git clone git@github.com:evanejtucker/react-auth.git`
-    * `cd react-auth`
+    * `git@github.com:Erinkenneyco/birthcontrol2`
+    * `cd birthcontrol2`
 2. install dependencies
     * `npm run install`
 3. Start mongo server by opening a seperate terminal or bash window and run:
     * `mongod`
 4. Start the development server
     * `npm run start`
-5. Happy Hacking!
+
 
 ## Contributors
-    Evan E J Tucker
+    Erin Kenney, Selina Maes, Seneca Cherry, Paige Herbst

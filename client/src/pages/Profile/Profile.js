@@ -2,16 +2,24 @@
 
 import React, { Component } from "react";
 import "./Profile.scss";
-import { Button } from "reactstrap";
 import { Link } from "react-router-dom"
 import API from "../../utils/API";
-// import Flow from "./flowphoto.jpg";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import CalendarScreen from "./CalendarScreen.js";
-// import Calendar from 'tui-calendar'; /* ES6 */
 import "tui-calendar/dist/tui-calendar.css";
+import styled from "styled-components"
 
 
+    
+
+
+
+const styles = {
+    link: {
+      color: "rgb(132, 25, 240)"
+      
+  }
+}
 
 
 class Profile extends Component {
@@ -73,17 +81,21 @@ class Profile extends Component {
     render() {
         return (
             <Container className="profilePage">
+                <div style={{ marginTop: 10 }} ></div>
                 {this.state.loggedIn ? (
                     <>
+                        
+                            <Row className="profileBox">
 
-                        <Row className="profileBox">
+                                <h1 id="userTitle">Hello {this.state.user.username}!</h1>
+                            </Row>
+                        
 
-                            <h1 id="userTitle">Hello {this.state.user.username}!</h1>
-
-                        </Row>
-                        <Row>
-                            <p>Have you taken your pill today?</p>
-                        </Row>
+                        
+                            <Row>
+                                <h3>Have you taken your pill today?</h3>
+                            </Row>
+                        
                         <Row className="profilePhoto" class="col-md-6" data-aos="fade-up">
 
 
@@ -92,54 +104,55 @@ class Profile extends Component {
                         </Row>
 
 
-                        <CalendarScreen/>
-
-                        
+                        <CalendarScreen />
 
 
 
 
-                            <Row>
+
+
+                        <Row>
                             {/* <Col className="taken" id="reminder">
                    {/* <h3>Last Taken Reminder</h3> */}
-                  
-
-                   <Col className="appointment" id="schedule">
-                   <h4>Want to see a Doctor?</h4>
 
 
-                        <ul><a href="https://www.plannedparenthood.org/health-center" target="_blank" > Schedule an Appointment</a></ul>
+                            <Col className="appointment" id="schedule">
+                                <h4>Want to see a Doctor?</h4>
 
-                    </Col>
 
-                    <Col className="informational" id="links">
-                        <h4>Informational Links</h4>
+                                <ul><a href="https://www.plannedparenthood.org/health-center" style={styles.link} target="_blank rel= noopener norerferrer"  > Schedule an Appointment</a></ul>
 
-                        <ul><a href="https://www.plannedparenthood.org/" target="_blank" >Planned Parenthood Main Page</a></ul>
-                        <ul><a href="https://www.womenshealth.gov/" target="_blank" > Office of Women's Health</a></ul>
-                        <ul><a href="https://www.globalfundforwomen.org/womens-human-rights/#.XJAXipNKh-U" target="_blank"> Global Fund for Women</a></ul>
+                            </Col>
 
-                    </Col>
-                   </Row>
-                </>
-        ): (
-            <div className="noUser">
-                {!this.state.loading ? (
-                    <>
-                        <h1>please log in</h1>
-                        <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
+                            <Col className="informational" id="links">
+                                <h4>Informational Links</h4>
+
+                                <ul><a href="https://www.plannedparenthood.org/" style={styles.link} target="_blank rel= noopener norerferrer" >Planned Parenthood Main Page</a></ul>
+                                <ul><a href="https://www.womenshealth.gov/" style={styles.link} target="_blank rel=noopener norerferrer" > Office of Women's Health</a></ul>
+                                <ul><a href="https://www.globalfundforwomen.org/womens-human-rights/#.XJAXipNKh-U" style={styles.link} target="_blank rel=noopener norerferrer"> Global Fund for Women</a></ul>
+
+                            </Col>
+                        </Row>
                     </>
                 ) : (
-                        <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
-                    )}
-            </div>
+                        <div className="noUser">
+                            {!this.state.loading ? (
+                                <>
+                                    <h1>please log in</h1>
+                                    <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
+                                </>
+                            ) : (
+                                    <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
+                                )}
+                        </div>
 
+                    )
+                }
+
+
+            </Container>
         )
     }
-            
-        
-       </Container>
-    )}
 }
 
 

@@ -8,6 +8,13 @@
     min-height: 400px;
     margin-bottom: 100px;
     padding-bottom: 70px; /* height of your footer */
-    position: relative;
+    position: absolute;
     clear: both;
+    
+
+}
+
+body{
+    background-color: blue($color: #000000)
+    // background-color:$background-color
 }

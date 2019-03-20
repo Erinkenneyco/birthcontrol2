@@ -4,8 +4,21 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Joke from "../../components/Joke"
 import "./Home.scss";
+// import Background from "../../background.jpg";
+// import { Container } from "reactstrap";
+// import styled from "styled-components"
 
 
+// var divStyle = {
+//   width: "100%",
+//   height: "400px",
+//   backgroundImage: `url(${Background})`
+// };
+
+// const BodyDiv = styled.div`
+// background-color:"#black"
+
+// `
 class Home extends Component {
 
   state = {
@@ -41,26 +54,43 @@ class Home extends Component {
     });
   }
 
+
+
   render() {
+
+    // function Home (){
+    //   return <img src={logo} alt="Logo" />;
+    //    };
     return (
+      // <BodyDiv>
+
+      // // <Container className="homePage">
+      //   {/* <div style={{ divStyle }}> */}
+      //   {/* </div> */}
+
+
       <div className="homeBox">
-        <Joke/>
+        <Joke />
         {/* {this.state.loggedIn ? (
            <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Fact</Button>
-        ) : (<></>)} */}
+        ) : (<></>)}  */}
       </div>
 
-    );
-        }
 
 
-          
-          
-         
-   
+      // </Container>
+
+      // </BodyDiv>
+
+
+
+
+    )
+
+
+  }
+
 }
-
-
 
 
 

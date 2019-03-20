@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
 import { Link } from "react-router-dom";
+import styled from "styled-components"
+
+const ButtonDiv = styled.div`
+margin:5px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+border-radius: 5px; /* 5px rounded corners */
+background-color:rgb(132, 25, 240)
+`
 
 class Signup extends Component {
     state = {
@@ -8,7 +17,7 @@ class Signup extends Component {
         validPassword: false,
         confirmPassword: false
     }
-    
+
     componentDidUpdate() {
         this.validatePassword();
         this.confirmPassword();
@@ -61,9 +70,9 @@ class Signup extends Component {
             <div>
                 <h2 className="loginTitle title-font">Signup</h2>
                 <hr />
-                {this.props.message?(
+                {this.props.message ? (
                     <Alert className="animated fadeIn" color="danger">{this.props.message}</Alert>
-                ): (<></>)}
+                ) : (<></>)}
                 <Form>
                     <FormGroup>
                         <Label for="username">Username</Label>
@@ -80,9 +89,11 @@ class Signup extends Component {
                     </FormGroup>
                     {/* if all fields are valid, allow the user to submit the form */}
                     {/* {(this.state.validUsername && this.state.validPassword && this.state.confirmPassword) ? ( */}
-                        <Button onClick={this.props.handleSignup} color="success" block>Signup</Button>
+                    <ButtonDiv>
+                        <Button onClick={this.props.handleSignup} color= "" block>Signup</Button>
+                    </ButtonDiv>
                     {/* ) : ( */}
-                        {/* <Button onClick={this.props.handleSignup} color="danger" block disabled>Signup</Button> */}
+                    {/* <Button onClick={this.props.handleSignup} color="danger" block disabled>Signup</Button> */}
                     {/* )} */}
                     <p className="signupLink">
                         <Link to="/login">already have an account?  Sign in here</Link>

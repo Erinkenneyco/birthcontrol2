@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "./TempCollect.scss";
-import { Container}  from "reactstrap";
+import { Container, Button,} from "reactstrap";
+import styled from "styled-components"
+
+const ButtonDiv = styled.div`
+margin:5px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+border-radius: 5px; /* 5px rounded corners */
+background-color:rgb(132, 25, 240)
+`
+
+
 
 class TempCollect extends Component {
     state = {
@@ -58,12 +69,25 @@ class TempCollect extends Component {
     }
 
     render() {
+        // var TempCollectStyle = {
+        // padding: 10,
+        // margin: 10,
+        // backgroundColor: "f5f5f5",
+        // color: "#333",
+        // display: "inline-block",
+        // fontFamily: "monospace",
+        // fontSize: 32,
+        // textAlign: "center"
+        // };
         return (
 
-            <Container className="tempCollectPage">
-                <div style={{ marginTop: 10, }}>
+            // <div TempCollectStyle={{ backgroundImage: f5f5f5 }}>
 
-                    <h3>Log your temperature and any symptoms or notes you have!!</h3>
+            <Container className="tempCollectPage">
+                <div style={{ marginTop: 10 }} >
+                    
+                    <h3 style={{textAlign:"center"}}>Log your temperature and any symptoms or notes you have!!</h3>
+                    
                     <br />
                     <br />
 
@@ -205,13 +229,19 @@ class TempCollect extends Component {
                         <textarea className="form-control" name="symptoms" rows="3" placeholder="What symptoms are you experiencing?" onChange={this.handleInputChange}
                             value={this.state.symptoms} ></textarea>
                         <br />
-                        <button type="submit" onClick={this.handleButtonClick} className="btn btn-primary" >Log Entry</button>
-
+                        <ButtonDiv>
+                            <Button onClick={this.handleButtonClick} color="" block>
+                                Log Entry </Button>
+                        </ButtonDiv>
                     </form>
 
                 </div>
-            </Container>
+            </Container >
+
+
         )
+
+
     }
 }
 

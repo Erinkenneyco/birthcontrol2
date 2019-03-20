@@ -1,5 +1,3 @@
-// listens for click to run algoritm 
-
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "./TempCollect.scss";
@@ -52,8 +50,11 @@ class TempCollect extends Component {
             }
 
 
+
             API.addLog(log)
         }
+        
+        alert("Your log has been added successfully! Check 'all logs' for your history!");
     }
 
     render() {
